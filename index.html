@@ -1,60 +1,425 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#09090b">
-<meta name="description" content="HAARIS_MODS — app links, official downloads and updates.">
-<title>HAARIS_MODS 😎 | App Hub</title>
-<style>
-:root{--bg:#09090b;--panel:#141418;--panel2:#1b1114;--red:#ef4444;--red2:#b91c1c;--text:#f8fafc;--muted:#a1a1aa;--line:#432025}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#321015 0%,#111014 38%,var(--bg) 72%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}
-a{color:inherit;text-decoration:none}.wrap{width:min(920px,92%);margin:auto;padding:28px 0 36px}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.pill{border:1px solid #7f1d1d;border-radius:999px;padding:9px 14px;color:#fecaca;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
-.hero{text-align:center;padding:52px 12px 34px}.logo{width:88px;height:88px;margin:0 auto 18px;border-radius:26px;background:linear-gradient(145deg,#ef4444,#450a0a);display:grid;place-items:center;font-size:2rem;font-weight:900;box-shadow:0 0 38px #ef444444;border:1px solid #fb7185}.hero h1{font-size:clamp(2rem,7vw,4rem);letter-spacing:-.055em;margin:0;font-weight:900}.hero h1 span{color:var(--red)}.hero p{color:#d4d4d8;line-height:1.65;max-width:540px;margin:14px auto 22px}.cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(100deg,#dc2626,#991b1b);padding:13px 20px;border-radius:14px;font-weight:800;box-shadow:0 8px 26px #dc262633;transition:transform .18s,filter .18s}.cta:hover{transform:translateY(-2px);filter:brightness(1.1)}
-.section{margin-top:22px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 2px 14px}.section h2{margin:0;font-size:1.18rem}.section-head small{color:var(--muted)}.apps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.app{background:linear-gradient(145deg,#19191f,#100d10);border:1px solid var(--line);border-radius:20px;padding:18px;min-width:0;transition:border-color .2s,transform .2s}.app:hover{border-color:#ef4444;transform:translateY(-3px)}.app-icon{width:54px;height:54px;border-radius:16px;background:#2a1115;border:1px solid #7f1d1d;display:grid;place-items:center;font-size:1.4rem;font-weight:900;color:#fca5a5;margin-bottom:16px}.app h3{margin:0 0 6px;font-size:1.05rem}.app p{margin:0 0 16px;color:var(--muted);font-size:.88rem;line-height:1.5}.app .cta{width:100%;padding:11px 10px;font-size:.9rem}
-.notice{margin-top:18px;border:1px solid #3f2025;background:#130e11;border-radius:16px;padding:14px 16px;color:#d4d4d8;font-size:.85rem;line-height:1.6}.notice strong{color:#fca5a5}
-footer{border-top:1px solid #27272a;margin-top:34px;padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.84rem}footer a{color:#fca5a5}
-@media(max-width:650px){.wrap{padding-top:18px}.hero{padding-top:38px}.apps{grid-template-columns:1fr}.app{display:grid;grid-template-columns:54px 1fr;gap:0 14px;align-items:center;padding:14px}.app-icon{grid-row:span 2;margin:0}.app h3{align-self:end}.app p{margin:4px 0 0}.app .cta{grid-column:1/-1;margin-top:14px}.section-head{align-items:start;flex-direction:column}.top .pill:last-child{display:none}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="HAARIS_MODS - Discover apps and get links from our Telegram bot.">
+  <title>HAARIS_MODS 😎 | Premium Apps</title>
+
+  <style>
+    :root {
+      --bg: #080808;
+      --card: #121212;
+      --red: #ff2638;
+      --red-dark: #a90019;
+      --text: #ffffff;
+      --muted: #a6a6a6;
+      --border: rgba(255, 38, 56, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255, 38, 56, 0.13), transparent 45%),
+        var(--bg);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1080px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+
+    .brand span {
+      color: var(--red);
+    }
+
+    .nav-link {
+      border: 1px solid var(--border);
+      padding: 10px 15px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 76px 0 48px;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #ff9ca5;
+      border: 1px solid var(--border);
+      background: rgba(255, 38, 56, 0.08);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 8vw, 66px);
+      line-height: 1.08;
+      font-weight: 950;
+      letter-spacing: -2px;
+    }
+
+    h1 span {
+      color: var(--red);
+      text-shadow: 0 0 30px rgba(255, 38, 56, 0.22);
+    }
+
+    .hero p {
+      max-width: 540px;
+      margin: 18px auto 26px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .primary-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 10px;
+      background: var(--red);
+      color: white;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 8px 28px rgba(255, 38, 56, 0.18);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .primary-btn:hover {
+      background: #e9162a;
+      transform: translateY(-2px);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 22px 0;
+    }
+
+    .section-heading h2 {
+      font-size: 25px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      padding-bottom: 56px;
+    }
+
+    .app-card {
+      overflow: hidden;
+      background: linear-gradient(155deg, #171717, #0d0d0d);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .app-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--red);
+    }
+
+    .app-image {
+      height: 180px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(circle, rgba(255, 38, 56, 0.12), transparent 70%),
+        #101010;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .app-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .app-info {
+      padding: 19px;
+    }
+
+    .app-info h3 {
+      font-size: 19px;
+      margin-bottom: 9px;
+    }
+
+    .app-info p {
+      min-height: 38px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .download-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      border: 1px solid var(--red);
+      border-radius: 9px;
+      color: white;
+      background: rgba(255, 38, 56, 0.1);
+      font-size: 13px;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .download-btn:hover {
+      background: var(--red);
+    }
+
+    .telegram-banner {
+      text-align: center;
+      background: linear-gradient(120deg, #1a090b, #111111);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px 18px;
+      margin-bottom: 45px;
+    }
+
+    .telegram-banner h2 {
+      margin-bottom: 10px;
+      font-size: 23px;
+    }
+
+    .telegram-banner p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 19px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 24px 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    footer strong {
+      color: var(--red);
+    }
+
+    @media (max-width: 760px) {
+      .app-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+      }
+
+      .app-image {
+        height: 145px;
+        padding: 14px;
+      }
+
+      .app-info {
+        padding: 14px;
+      }
+
+      .app-info h3 {
+        font-size: 16px;
+      }
+
+      .app-info p {
+        font-size: 12px;
+      }
+
+      .section-heading h2 {
+        font-size: 21px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .app-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .app-image {
+        height: 190px;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .brand {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="wrap">
-  <header class="top">
-    <span class="pill">HM · App Hub</span>
-    <a class="pill" href="https://t.me/haarisapps" target="_blank" rel="noopener">Telegram ↗</a>
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="#">HAARIS<span>_MODS</span> 😎</a>
+      <a class="nav-link" href="https://t.me/haarisapps"
+         target="_blank" rel="noopener noreferrer">
+        Join Telegram ↗
+      </a>
+    </div>
   </header>
-  <main>
+
+  <main class="container">
     <section class="hero">
-      <div class="logo" aria-label="HAARIS MODS logo">HM</div>
-      <h1>HAARIS<span>_MODS</span> 😎</h1>
-      <p>Premium-style app hub for Android. Find official app pages, useful updates, and community news in one place.</p>
-      <a class="cta" href="https://t.me/haarisapps" target="_blank" rel="noopener">✈ Join Telegram Community</a>
+      <div class="tag">WELCOME TO HAARIS_MODS</div>
+      <h1>YOUR APPS.<br><span>YOUR STYLE.</span></h1>
+      <p>
+        Discover your favourite apps in one place.
+        Choose an app below and continue through our Telegram bot.
+      </p>
+      <a class="primary-btn" href="#apps">Explore Apps ↓</a>
     </section>
-    <section class="section" id="apps">
-      <div class="section-head"><h2>APP DOWNLOADS</h2><small>Official download sources</small></div>
-      <div class="apps">
-        <article class="app">
-          <div class="app-icon" aria-hidden="true">C</div>
-          <h3>CapCut</h3><p>Video editing and creative tools.</p>
-          <a class="cta" href="https://www.capcut.com/" target="_blank" rel="noopener">Official Website ↗</a>
+
+    <section id="apps">
+      <div class="section-heading">
+        <h2>Featured Apps</h2>
+        <p>3 apps available</p>
+      </div>
+
+      <div class="app-grid">
+        <!-- Image path: images/capcut.jpg -->
+        <article class="app-card">
+          <div class="app-image">
+            <img src="images/capcut.jpg" alt="CapCut app image"
+                 onerror="this.style.display='none'">
+          </div>
+          <div class="app-info">
+            <h3>CAPCUT</h3>
+            <p>Video editing and creative tools.</p>
+            <a class="download-btn"
+               href="https://t.me/HAARIS_APPS_BOT?start=BQADAQADxg8AAjWiqUY4kz111DWoExYE"
+               target="_blank" rel="noopener noreferrer">
+              Get App ↗
+            </a>
+          </div>
         </article>
-        <article class="app">
-          <div class="app-icon" aria-hidden="true">♫</div>
-          <h3>Spotify</h3><p>Music, podcasts, and playlists.</p>
-          <a class="cta" href="https://www.spotify.com/download/" target="_blank" rel="noopener">Official Download ↗</a>
+
+        <!-- Image path: images/purity.jpg -->
+        <article class="app-card">
+          <div class="app-image">
+            <img src="images/purity.jpg" alt="Purity app image"
+                 onerror="this.style.display='none'">
+          </div>
+          <div class="app-info">
+            <h3>PURITY</h3>
+            <p>Open the app link through our Telegram bot.</p>
+            <a class="download-btn"
+               href="https://t.me/HAARIS_APPS_BOT?start=BQADAQAD5g8AAjWioUYv4tFwuNjhcBYE"
+               target="_blank" rel="noopener noreferrer">
+              Get App ↗
+            </a>
+          </div>
         </article>
-        <article class="app">
-          <div class="app-icon" aria-hidden="true">▶</div>
-          <h3>YouTube</h3><p>Videos, creators, and channels.</p>
-          <a class="cta" href="https://www.youtube.com/" target="_blank" rel="noopener">Official Website ↗</a>
+
+        <!-- Image path: images/mx-player-pro.jpg -->
+        <article class="app-card">
+          <div class="app-image">
+            <img src="images/mx-player-pro.jpg" alt="MX Player Pro app image"
+                 onerror="this.style.display='none'">
+          </div>
+          <div class="app-info">
+            <h3>MX PLAYER PRO</h3>
+            <p>Media player app listing.</p>
+            <a class="download-btn"
+               href="https://t.me/HAARIS_APPS_BOT?start=BQADAQADpA0AAmQFwUWP9cz4L7IL4RYE"
+               target="_blank" rel="noopener noreferrer">
+              Get App ↗
+            </a>
+          </div>
         </article>
       </div>
-      <div class="notice"><strong>Download safely:</strong> These buttons go to official app websites, not modded APK files. Check each app’s terms and availability in your region before installing.</div>
+    </section>
+
+    <section class="telegram-banner">
+      <h2>Join Our Telegram Community</h2>
+      <p>Follow HAARIS_MODS for updates and app links.</p>
+      <a class="primary-btn" href="https://t.me/haarisapps"
+         target="_blank" rel="noopener noreferrer">
+        Join @haarisapps ↗
+      </a>
     </section>
   </main>
-  <footer><span>© <span id="year"></span> HAARIS_MODS 😎</span><span>Stay updated on <a href="https://t.me/haarisapps" target="_blank" rel="noopener">Telegram</a></span></footer>
-</div>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <footer>
+    <p>© <span id="year"></span> <strong>HAARIS_MODS 😎</strong></p>
+    <p>Use trusted sources and respect app developers' terms.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
