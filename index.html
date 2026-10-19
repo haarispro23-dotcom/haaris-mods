@@ -1,3 +1,5 @@
+Edu va
+
 <!DOCTYPE html>  <html lang="en">  
 <head>  
 <meta charset="UTF-8">  
@@ -645,4 +647,56 @@ document.getElementById("themeBtn").addEventListener("click", () => {
   
 // Admin controls are intentionally local-only, not protected server admin access.  
 document.getElementById("adminForm").addEventListener("submit", event => {  
-  event.preventDefa
+  event.preventDefault();  
+  const form = event.currentTarget;  
+  const data = new FormData(form);  
+  const name = String(data.get("name") || "").trim();  
+  const description = String(data.get("description") || "").trim();  
+  const category = String(data.get("category") || "");  
+  const url = String(data.get("url") || "").trim();  
+  const image = String(data.get("image") || "").trim();  
+  
+  try {  
+    const parsedUrl = new URL(url);  
+    if (parsedUrl.protocol !== "https:") throw new Error("HTTPS required");  
+  } catch (e) {  
+    alert("Valid HTTPS app link enter pannu.");  
+    return;  
+  }  
+  
+  if (!name || !description) {  
+    alert("App name and description fill pannu.");  
+    return;  
+  }  
+  
+  apps.unshift({  
+    id: "custom-" + Date.now(),  
+    name, description, category, url,  
+    image: safeImagePath(image),  
+    added: Date.now()  
+  });  
+  saveApps();  
+  render();  
+  form.reset();  
+  adminDialog.close();  
+});  
+  
+document.getElementById("closeAdmin").addEventListener("click", () => {  
+  adminDialog.close();  
+});  
+  
+document.getElementById("exportApps").addEventListener("click", () => {  
+  const blob = new Blob([JSON.stringify(apps, null, 2)], {  
+    type: "application/json"  
+  });  
+  const link = document.createElement("a");  
+  link.href = URL.createObjectURL(blob);  
+  link.download = "haaris-mods-apps.json";  
+  link.click();  
+  URL.revokeObjectURL(link.href);  
+});  
+  
+document.getElementById("year").textContent = new Date().getFullYear();  
+render();  
+</script>  </body>  
+</html>  
