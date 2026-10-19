@@ -5,339 +5,154 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
-<meta name="description" content="HAARIS MODS - Premium apps, tools and updates.">
-<title>HAARIS MODS | Premium Apps</title>
+<meta name="description" content="Download links">
+<title>Downloads</title>
 
 <style>
 :root {
-  --bg: #080808;
-  --panel: #121212;
-  --panel2: #1a1a1a;
-  --text: #f7f7f7;
-  --muted: #a6a6a6;
-  --red: #ff2638;
-  --border: #292929;
-  --shadow: rgba(255, 25, 45, .16);
+  --bg:#080808;
+  --panel:#121212;
+  --panel2:#1a1a1a;
+  --text:#f7f7f7;
+  --muted:#a6a6a6;
+  --red:#ff2638;
+  --border:#292929;
+  --shadow:rgba(255,25,45,.16);
 }
 body.light {
-  --bg: #f5f5f7;
-  --panel: #ffffff;
-  --panel2: #eeeeF2;
-  --text: #171717;
-  --muted: #666666;
-  --red: #df1027;
-  --border: #dddddf;
-  --shadow: rgba(220, 0, 30, .10);
+  --bg:#f5f5f7;
+  --panel:#fff;
+  --panel2:#eeeef2;
+  --text:#171717;
+  --muted:#666;
+  --red:#df1027;
+  --border:#ddd;
+  --shadow:rgba(220,0,30,.10);
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-  transition: background .25s, color .25s;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  transition:background .25s,color .25s;
 }
-a { color: inherit; text-decoration: none; }
-button, input, select { font: inherit; }
-button { cursor: pointer; }
-.container { width: min(1100px, 92%); margin: auto; }
+a { color:inherit;text-decoration:none; }
+button { font:inherit;cursor:pointer; }
+.container { width:min(1100px,92%);margin:auto; }
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
 }
 .nav {
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  min-height:65px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
 }
-.logo { font-size: 21px; font-weight: 900; letter-spacing: 1px; }
-.logo span { color: var(--red); }
-.nav-actions { display: flex; gap: 8px; align-items: center; }
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 11px 15px;
-  color: var(--text);
-  background: var(--panel2);
-  font-weight: 700;
-  transition: transform .2s, box-shadow .2s, background .2s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px 16px;
+  color:var(--text);
+  background:var(--panel2);
+  font-weight:700;
+  transition:transform .2s,box-shadow .2s;
 }
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 18px var(--shadow);
+  transform:translateY(-2px);
+  box-shadow:0 0 18px var(--shadow);
 }
-.btn-red {
-  background: var(--red);
-  color: white;
-  border-color: var(--red);
-}
-.icon-btn { padding: 10px 12px; }
+.btn-red { background:var(--red);color:white;border-color:var(--red); }
 
 .hero {
-  padding: 65px 0 38px;
-  text-align: center;
-  background: radial-gradient(ellipse at top, var(--shadow), transparent 65%);
-}
-.pill {
-  display: inline-block;
-  color: var(--red);
-  border: 1px solid var(--red);
-  border-radius: 30px;
-  padding: 7px 13px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  padding:55px 0 30px;
+  text-align:center;
+  background:radial-gradient(ellipse at top,var(--shadow),transparent 65%);
 }
 .hero h1 {
-  font-size: clamp(36px, 8vw, 66px);
-  margin: 20px 0 12px;
-  line-height: 1.08;
+  font-size:clamp(32px,7vw,55px);
+  margin:0 0 12px;
+  line-height:1.1;
 }
 .hero h1 span {
-  color: var(--red);
-  text-shadow: 0 0 25px var(--shadow);
+  color:var(--red);
+  text-shadow:0 0 25px var(--shadow);
 }
 .hero p {
-  color: var(--muted);
-  line-height: 1.7;
-  max-width: 560px;
-  margin: 0 auto 24px;
+  color:var(--muted);
+  line-height:1.7;
+  margin:0 auto 20px;
 }
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+.section { padding:25px 0 40px; }
 
-.search-area { padding: 18px 0 28px; }
-.search-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 15px;
-  padding: 5px 15px;
+.download-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
 }
-.search-box input {
-  width: 100%;
-  padding: 13px 0;
-  border: 0;
-  outline: 0;
-  color: var(--text);
-  background: transparent;
+.download-card {
+  min-width:0;
+  padding:25px 15px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:18px;
+  text-align:center;
+  animation:appear .4s ease both;
+  transition:transform .25s,border-color .25s,box-shadow .25s;
 }
-.search-box:focus-within {
-  border-color: var(--red);
-  box-shadow: 0 0 15px var(--shadow);
+.download-card:hover {
+  transform:translateY(-5px);
+  border-color:var(--red);
+  box-shadow:0 8px 30px var(--shadow);
 }
-.section { padding: 24px 0 38px; }
-.section-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 18px;
+.download-icon {
+  font-size:36px;
+  margin-bottom:18px;
 }
-.section-heading h2 { margin: 0; font-size: 25px; }
-.section-heading h2 span { color: var(--red); }
-.section-heading p { color: var(--muted); font-size: 13px; }
-
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-bottom: 20px;
-}
-.filter {
-  padding: 9px 14px;
-  border-radius: 25px;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  color: var(--text);
-}
-.filter.active, .filter:hover {
-  background: var(--red);
-  color: white;
-  border-color: var(--red);
-}
-
-.app-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-.app-card {
-  min-width: 0;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 19px;
-  overflow: hidden;
-  transition: transform .25s, border-color .25s, box-shadow .25s;
-  animation: appear .35s ease both;
-}
-.app-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--red);
-  box-shadow: 0 8px 30px var(--shadow);
-}
-.app-image {
-  height: 175px;
-  background: var(--panel2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  overflow: hidden;
-}
-.app-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 12px;
-}
-.app-info { padding: 17px; }
-.app-info h3 { margin: 0 0 9px; font-size: 17px; }
-.app-info p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.6;
-  min-height: 39px;
-}
-.app-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-.tag {
-  font-size: 10px;
-  font-weight: 800;
-  color: var(--red);
-  background: var(--shadow);
-  padding: 6px 8px;
-  border-radius: 6px;
-}
-.download-btn { width: 100%; }
-.remove-btn {
-  width: 100%;
-  margin-top: 8px;
-  color: var(--red);
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  padding: 9px;
-}
-
-.empty {
-  display: none;
-  text-align: center;
-  padding: 35px 10px;
-  color: var(--muted);
-  border: 1px dashed var(--border);
-  border-radius: 15px;
-}
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 13px;
-}
-.social-card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 15px;
-  padding: 19px 12px;
-  text-align: center;
-  transition: border-color .2s, transform .2s;
-}
-.social-card:hover { border-color: var(--red); transform: translateY(-3px); }
-.social-card strong { display: block; margin-bottom: 7px; }
-.social-card small { color: var(--muted); }
-
-.community {
-  padding: 27px;
-  border-radius: 20px;
-  background: linear-gradient(120deg, var(--panel2), var(--panel));
-  border: 1px solid var(--border);
-  text-align: center;
-}
-.community h2 { margin-top: 0; }
-.community p { color: var(--muted); line-height: 1.6; }
+.download-btn { width:100%; }
 
 footer {
-  border-top: 1px solid var(--border);
-  padding: 25px 0;
-  margin-top: 25px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
+  border-top:1px solid var(--border);
+  padding:22px 0;
+  margin-top:20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
 }
-
-/* Admin panel */
-dialog {
-  width: min(440px, 92%);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background: var(--panel);
-  color: var(--text);
-  padding: 23px;
-}
-dialog::backdrop { background: rgba(0,0,0,.75); }
-dialog h2 { margin-top: 0; }
-.admin-form { display: grid; gap: 11px; }
-.admin-form input, .admin-form select {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--text);
-}
-.admin-note { color: var(--muted); font-size: 12px; line-height: 1.6; }
-.admin-row { display: flex; gap: 9px; }
-.admin-row > * { flex: 1; }
 
 @keyframes appear {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity:0;transform:translateY(12px); }
+  to { opacity:1;transform:translateY(0); }
 }
-@media (max-width: 760px) {
-  .app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  .app-image { height: 135px; }
-  .app-info { padding: 12px; }
-  .app-info h3 { font-size: 15px; }
-  .hero { padding-top: 48px; }
-  .section-heading h2 { font-size: 22px; }
+
+@media(max-width:760px) {
+  .download-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+  .download-card { padding:20px 12px; }
+  .hero { padding-top:40px; }
 }
-@media (max-width: 420px) {
-  .logo { font-size: 16px; }
-  .nav { min-height: 62px; }
-  .nav-actions .btn { padding: 9px; font-size: 12px; }
-  .app-grid { gap: 9px; }
-  .app-image { height: 110px; }
-  .app-info p { font-size: 12px; }
-  .social-grid { gap: 8px; }
-  .social-card { padding: 15px 5px; font-size: 13px; }
+@media(max-width:420px) {
+  .download-grid { gap:9px; }
+  .download-card { padding:17px 9px; }
+  .btn { padding:11px 10px;font-size:13px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-    scroll-behavior: auto !important;
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
   }
 }
 </style>
@@ -346,382 +161,91 @@ dialog h2 { margin-top: 0; }
 <body>
 <header>
   <div class="container nav">
-    <a href="#" class="logo">HAARIS <span>MODS 😎</span></a>
-    <div class="nav-actions">
-      <button class="btn icon-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
-      <a class="btn btn-red" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">✈ Join</a>
-    </div>
+    <button class="btn" id="themeBtn"
+      aria-label="Toggle theme">☀️</button>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="container">
-      <span class="pill">⚡ PREMIUM APP HUB</span>
-      <h1>WELCOME TO<br><span>HAARIS MODS</span></h1>
-      <p>Discover apps, explore tools and find your next favourite download. Simple, stylish and mobile-friendly.</p>
-      <div class="hero-actions">
-        <a href="#apps" class="btn btn-red">🚀 Explore Apps</a>
-        <a href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer" class="btn">✈ Telegram Community</a>
-      </div>
-    </div>
-  </section>
+<section class="hero">
+  <div class="container">
+    <h1><span>DOWNLOADS</span></h1>
+    <p>Choose a link below to continue.</p>
+  </div>
+</section>
 
-  <section class="container search-area" aria-label="Search apps">
-    <label class="search-box">
-      <span>🔍</span>
-      <input id="searchInput" type="search" placeholder="Search apps... e.g. CapCut" autocomplete="off">
-    </label>
-  </section>
-
-  <section class="container section" id="apps">
-    <div class="section-heading">
-      <div>
-        <h2>🆕 Latest <span>Apps</span></h2>
-        <p>Recently added apps</p>
-      </div>
-      <span class="tag" id="appCount">3 APPS</span>
-    </div>
-    <div class="app-grid" id="latestGrid"></div>
-    <div class="empty" id="latestEmpty">No latest apps found.</div>
-  </section>
-
-  <section class="container section" id="all-apps">
-    <div class="section-heading">
-      <div>
-        <h2>Explore <span>Apps</span></h2>
-        <p>Choose a category and find your app</p>
-      </div>
-    </div>
-    <div class="filters" id="filters">
-      <button class="filter active" data-category="All">All Apps</button>
-      <button class="filter" data-category="Video Editors">🎬 Video Editors</button>
-      <button class="filter" data-category="Music">🎵 Music</button>
-      <button class="filter" data-category="Tools">🧰 Tools</button>
-    </div>
-    <div class="app-grid" id="appGrid"></div>
-    <div class="empty" id="allEmpty">No apps match your search.</div>
-  </section>
-
-  <section class="container section">
-    <div class="section-heading">
-      <h2>Follow <span>Us</span> ❤️</h2>
-    </div>
-    <div class="social-grid">
-      <a class="social-card" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">
-        <strong>✈ Telegram</strong><small>Join our community</small>
-      </a>
-      <a class="social-card" href="https://www.instagram.com/haaris_mods?xtok=MXZrbTc3ZDVpZDk2cA==" target="_blank" rel="noopener noreferrer">
-        <strong>📸 Instagram</strong><small>@haaris_mods</small>
-      </a>
-      <a class="social-card" href="https://youtube.com/@unidentify_2.0?si=Ff3ctZKYT68OmbXA" target="_blank" rel="noopener noreferrer">
-        <strong>▶ YouTube</strong><small>Subscribe to channel</small>
-      </a>
-    </div>
-  </section>
-
-  <section class="container section">
-    <div class="community">
-      <h2>🔥 Join HAARIS APPS</h2>
-      <p>Join the Telegram community for app updates and new posts.</p>
-      <a class="btn btn-red" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">Join Telegram ↗</a>
-    </div>
-  </section>
+<section class="container section">
+  <div class="download-grid" id="downloadGrid"></div>
+</section>
 </main>
 
 <footer>
-  <div class="container">
-    <strong>HAARIS MODS 😎</strong><br>
-    Made with ❤️ for the community.<br>
-    Only download apps you trust and have permission to use.<br>
-    © <span id="year"></span> HAARIS MODS
-  </div>
+  © <span id="year"></span>
 </footer>
-
-<!-- Admin panel: local browser only -->
-<dialog id="adminDialog">
-  <h2>👑 App Manager</h2>
-  <form class="admin-form" id="adminForm">
-    <input name="name" placeholder="App name" required maxlength="50">
-    <input name="image" placeholder="Image filename, e.g. CAP.JPG" maxlength="100">
-    <input name="description" placeholder="Short description" required maxlength="140">
-    <select name="category" required>
-      <option value="Video Editors">Video Editors</option>
-      <option value="Music">Music</option>
-      <option value="Tools">Tools</option>
-    </select>
-    <input name="url" type="url" placeholder="App download URL (https://...)" required>
-    <div class="admin-row">
-      <button class="btn btn-red" type="submit">Add App</button>
-      <button class="btn" type="button" id="closeAdmin">Close</button>
-    </div>
-  </form>
-  <p class="admin-note">Local demo: app changes save only in this browser. Don't enter secret tokens or passwords here. Public website updates require editing the site files or connecting a secure backend.</p>
-  <button class="btn" type="button" id="exportApps">Export App Data</button>
-</dialog>
 
 <script>
 "use strict";
 
-const STARTER_APPS = [
-  {
-    id: "movie-box-premium",
-    name: "MOVIE BOX PREMIUM",
-    image: "MB.JPG",
-    description: "All Movies No Ads Free Fast Download.",
-    category: "Tools",
-    url: "https://www.mediafire.com/file/bi29o9o7ecyuapp/MovieBox+premium.apk/file",
-    added: 5
-  },
-  {
-    id: "ff-lib-file",
-    name: "FF LIB FILE",
-    image: "FF.JPG",
-    description: "Using For Bypassing.",
-    category: "Tools",
-    url: "https://www.mediafire.com/file/1xinohenpqlls25/CAPCUT+ULTRA.apk/file",
-    added: 4
-  },
-  {
-    id: "capcut",
-    name: "CAPCUT",
-    image: "CAP.JPG",
-    description: "Video editing app listing.",
-    category: "Video Editors",
-    url: "https://www.mediafire.com/file/1xinohenpqlls25/CAPCUT+ULTRA.apk/file",
-    added: 3
-  },
-  {
-    id: "purity",
-    name: "PURITY",
-    image: "PURITY.JPG",
-    description: "Music app listing.",
-    category: "Music",
-    url: "https://www.mediafire.com/file/m36edj1izvudp3z/PURITY.apk/file",
-    added: 2
-  },
-  {
-    id: "mx-player-pro",
-    name: "MX PLAYER PRO",
-    image: "MX.JPG",
-    description: "Media player app listing.",
-    category: "Tools",
-    url: "https://www.mediafire.com/file/zv02ccm9jm1k2hi/MX_PLAYER+PRO.apk/file",
-    added: 1
-  }
+/*
+  Only URLs are stored here.
+  No app IDs, names, images, descriptions or categories.
+*/
+const DOWNLOAD_URLS = [
+  "https://www.mediafire.com/file/bi29o9o7ecyuapp/MovieBox+premium.apk/file",
+  "https://www.mediafire.com/file/1xinohenpqlls25/CAPCUT+ULTRA.apk/file",
+  "https://www.mediafire.com/file/1xinohenpqlls25/CAPCUT+ULTRA.apk/file",
+  "https://www.mediafire.com/file/m36edj1izvudp3z/PURITY.apk/file",
+  "https://www.mediafire.com/file/zv02ccm9jm1k2hi/MX_PLAYER+PRO.apk/file"
 ];
 
-const STORAGE_KEY = "haaris-mods-apps-v1";
-const THEME_KEY = "haaris-mods-theme-v1";
-const grid = document.getElementById("appGrid");
-const latestGrid = document.getElementById("latestGrid");
-const searchInput = document.getElementById("searchInput");
-const latestEmpty = document.getElementById("latestEmpty");
-const allEmpty = document.getElementById("allEmpty");
-const adminDialog = document.getElementById("adminDialog");
-let selectedCategory = "All";
-let adminEnabled = false;
-let apps = loadApps();
+const THEME_KEY = "downloads-theme-v1";
+const downloadGrid = document.getElementById("downloadGrid");
 
-function loadApps() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      if (Array.isArray(parsed)) return parsed;
-    }
-  } catch (e) {
-    console.warn("Could not load local app data.");
-  }
-  return STARTER_APPS.map(app => ({ ...app }));
-}
-
-function saveApps() {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(apps));
-  } catch (e) {
-    alert("Could not save changes in this browser.");
-  }
-}
-
-function safeImagePath(filename) {
-  if (!filename) return "";
-  // Only permit a simple filename, not an arbitrary URL or path.
-  if (!/^[a-zA-Z0-9._-]+$/.test(filename)) return "";
-  return filename;
-}
-
-function createCard(app, removable) {
+DOWNLOAD_URLS.forEach(url => {
   const card = document.createElement("article");
-  card.className = "app-card";
+  card.className = "download-card";
 
-  const imageBox = document.createElement("div");
-  imageBox.className = "app-image";
-  const imagePath = safeImagePath(app.image);
-  if (imagePath) {
-    const img = document.createElement("img");
-    img.src = imagePath;
-    img.alt = app.name + " app image";
-    img.loading = "lazy";
-    img.onerror = () => { img.style.display = "none"; };
-    imageBox.appendChild(img);
-  } else {
-    imageBox.textContent = "📱";
-  }
-
-  const info = document.createElement("div");
-  info.className = "app-info";
-
-  const meta = document.createElement("div");
-  meta.className = "app-meta";
-  const tag = document.createElement("span");
-  tag.className = "tag";
-  tag.textContent = app.category;
-  meta.appendChild(tag);
-
-  const title = document.createElement("h3");
-  title.textContent = app.name;
-
-  const desc = document.createElement("p");
-  desc.textContent = app.description;
+  const icon = document.createElement("div");
+  icon.className = "download-icon";
+  icon.textContent = "⬇️";
 
   const link = document.createElement("a");
   link.className = "btn btn-red download-btn";
-  link.href = app.url;
+  link.href = url;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
-  link.textContent = "Get App ↗";
+  link.textContent = "Download ↗";
 
-  info.append(meta, title, desc, link);
-
-  if (removable && adminEnabled) {
-    const remove = document.createElement("button");
-    remove.className = "remove-btn";
-    remove.textContent = "Remove App";
-    remove.type = "button";
-    remove.addEventListener("click", () => {
-      if (!confirm("Remove " + app.name + " from this browser?")) return;
-      apps = apps.filter(item => item.id !== app.id);
-      saveApps();
-      render();
-    });
-    info.appendChild(remove);
-  }
-
-  card.append(imageBox, info);
-  return card;
-}
-
-function matchesSearch(app) {
-  const term = searchInput.value.trim().toLowerCase();
-  const text = [app.name, app.description, app.category].join(" ").toLowerCase();
-  return text.includes(term);
-}
-
-function render() {
-  const filtered = apps.filter(app =>
-    matchesSearch(app) &&
-    (selectedCategory === "All" || app.category === selectedCategory)
-  );
-
-  grid.replaceChildren();
-  filtered.forEach(app => grid.appendChild(createCard(app, true)));
-  allEmpty.style.display = filtered.length ? "none" : "block";
-
-  const latest = apps
-    .filter(matchesSearch)
-    .slice()
-    .sort((a, b) => (a.added || 0) - (b.added || 0))
-    .slice(0, 3);
-
-  latestGrid.replaceChildren();
-  latest.forEach(app => latestGrid.appendChild(createCard(app, false)));
-  latestEmpty.style.display = latest.length ? "none" : "block";
-
-  document.getElementById("appCount").textContent =
-    apps.length + (apps.length === 1 ? " APP" : " APPS");
-}
-
-searchInput.addEventListener("input", render);
-
-document.getElementById("filters").addEventListener("click", event => {
-  const button = event.target.closest("[data-category]");
-  if (!button) return;
-  selectedCategory = button.dataset.category;
-  document.querySelectorAll(".filter").forEach(item =>
-    item.classList.toggle("active", item === button)
-  );
-  render();
+  card.append(icon, link);
+  downloadGrid.appendChild(card);
 });
 
 function setTheme(theme) {
   document.body.classList.toggle("light", theme === "light");
   document.getElementById("themeBtn").textContent =
     theme === "light" ? "🌙" : "☀️";
-  try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+
+  try {
+    localStorage.setItem(THEME_KEY, theme);
+  } catch (e) {}
 }
 
 let savedTheme = "dark";
-try { savedTheme = localStorage.getItem(THEME_KEY) || "dark"; } catch (e) {}
+
+try {
+  savedTheme = localStorage.getItem(THEME_KEY) || "dark";
+} catch (e) {}
+
 setTheme(savedTheme);
 
 document.getElementById("themeBtn").addEventListener("click", () => {
-  setTheme(document.body.classList.contains("light") ? "dark" : "light");
+  setTheme(
+    document.body.classList.contains("light") ? "dark" : "light"
+  );
 });
 
-// Admin controls are intentionally local-only, not protected server admin access.
-document.getElementById("adminForm").addEventListener("submit", event => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  const data = new FormData(form);
-  const name = String(data.get("name") || "").trim();
-  const description = String(data.get("description") || "").trim();
-  const category = String(data.get("category") || "");
-  const url = String(data.get("url") || "").trim();
-  const image = String(data.get("image") || "").trim();
-
-  try {
-    const parsedUrl = new URL(url);
-    if (parsedUrl.protocol !== "https:") throw new Error("HTTPS required");
-  } catch (e) {
-    alert("Valid HTTPS app link enter pannu.");
-    return;
-  }
-
-  if (!name || !description) {
-    alert("App name and description fill pannu.");
-    return;
-  }
-
-  apps.unshift({
-    id: "custom-" + Date.now(),
-    name, description, category, url,
-    image: safeImagePath(image),
-    added: Date.now()
-  });
-  saveApps();
-  render();
-  form.reset();
-  adminDialog.close();
-});
-
-document.getElementById("closeAdmin").addEventListener("click", () => {
-  adminDialog.close();
-});
-
-document.getElementById("exportApps").addEventListener("click", () => {
-  const blob = new Blob([JSON.stringify(apps, null, 2)], {
-    type: "application/json"
-  });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "haaris-mods-apps.json";
-  link.click();
-  URL.revokeObjectURL(link.href);
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-render();
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 </script>
 </body>
 </html>
