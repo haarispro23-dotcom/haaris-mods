@@ -1,51 +1,80 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
+<meta name="theme-color" content="#070b08">
 <meta name="description" content="HAARIS MODS - Premium apps, tools and updates.">
-<title>HAARIS MOD‌S | Premium Apps</title><style>
+<title>HAARIS MODS | Christmas Premium Apps</title>
+
+<style>
 :root {
-  --bg: #080808;
-  --panel: #121212;
-  --panel2: #1a1a1a;
-  --text: #f7f7f7;
-  --muted: #a6a6a6;
-  --red: #ff2638;
-  --border: #292929;
-  --shadow: rgba(255, 25, 45, .16);
+  --bg: #070b08;
+  --panel: #101a13;
+  --panel2: #18271c;
+  --text: #fffaf0;
+  --muted: #c0c7bf;
+  --red: #d91e36;
+  --gold: #e4c365;
+  --green: #176b3a;
+  --border: #b89b4a55;
+  --shadow: rgba(217, 30, 54, .22);
 }
+
 body.light {
-  --bg: #f5f5f7;
+  --bg: #f4f7f1;
   --panel: #ffffff;
-  --panel2: #eeeeF2;
-  --text: #171717;
-  --muted: #666666;
-  --red: #df1027;
-  --border: #dddddf;
-  --shadow: rgba(220, 0, 30, .10);
+  --panel2: #e9f0e8;
+  --text: #18221a;
+  --muted: #58645a;
+  --red: #c81932;
+  --gold: #a77d18;
+  --green: #176b3a;
+  --border: #d9c78b;
+  --shadow: rgba(190, 20, 45, .12);
 }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse at 50% 0%, #16452b55, transparent 55%),
+    var(--bg);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
   transition: background .25s, color .25s;
 }
+
 a { color: inherit; text-decoration: none; }
 button, input, select { font: inherit; }
 button { cursor: pointer; }
 .container { width: min(1100px, 92%); margin: auto; }
 
+/* CHRISTMAS TOP BAR */
+.christmas-greeting {
+  text-align: center;
+  padding: 10px 8px;
+  color: var(--gold);
+  background: linear-gradient(90deg, #092514, #171108, #092514);
+  border-bottom: 1px solid #c6a64c66;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+/* HEADER */
 header {
   position: sticky;
   top: 0;
   z-index: 10;
   background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
+
 .nav {
   min-height: 72px;
   display: flex;
@@ -53,6 +82,7 @@ header {
   justify-content: space-between;
   gap: 12px;
 }
+
 .site-logo {
   width: 48px;
   height: 48px;
@@ -61,8 +91,20 @@ header {
   vertical-align: middle;
   margin-right: 8px;
 }
-.logo span { color: var(--red); }
-.nav-actions { display: flex; gap: 8px; align-items: center; }
+
+.logo {
+  font-weight: 900;
+  text-shadow: 0 0 14px #d5b65a33;
+}
+
+.logo span { color: var(--gold); }
+
+.nav-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -76,47 +118,60 @@ header {
   font-weight: 700;
   transition: transform .2s, box-shadow .2s, background .2s;
 }
+
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 18px var(--shadow);
 }
+
 .btn-red {
-  background: var(--red);
+  background: linear-gradient(135deg, #b90f2a, #ed3044);
   color: white;
-  border-color: var(--red);
+  border-color: var(--gold);
+  box-shadow: 0 0 12px #d7193230;
 }
+
 .icon-btn { padding: 10px 12px; }
 
+/* HERO */
 .hero {
   padding: 65px 0 38px;
   text-align: center;
-  background: radial-gradient(ellipse at top, var(--shadow), transparent 65%);
+  background:
+    radial-gradient(ellipse at top, #176b3a44, transparent 55%),
+    radial-gradient(ellipse at center, var(--shadow), transparent 70%);
 }
+
 .pill {
   display: inline-block;
-  color: var(--red);
-  border: 1px solid var(--red);
+  color: var(--gold);
+  border: 1px solid var(--gold);
   border-radius: 30px;
   padding: 7px 13px;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
+  background: #d6b65c10;
 }
+
 .hero h1 {
   font-size: clamp(36px, 8vw, 66px);
   margin: 20px 0 12px;
   line-height: 1.08;
 }
+
 .hero h1 span {
-  color: var(--red);
-  text-shadow: 0 0 25px var(--shadow);
+  color: var(--gold);
+  text-shadow: 0 0 25px #d5b65a44;
 }
+
 .hero p {
   color: var(--muted);
   line-height: 1.7;
   max-width: 560px;
   margin: 0 auto 24px;
 }
+
 .hero-actions {
   display: flex;
   justify-content: center;
@@ -124,7 +179,9 @@ header {
   flex-wrap: wrap;
 }
 
+/* SEARCH */
 .search-area { padding: 18px 0 28px; }
+
 .search-box {
   display: flex;
   align-items: center;
@@ -134,6 +191,7 @@ header {
   border-radius: 15px;
   padding: 5px 15px;
 }
+
 .search-box input {
   width: 100%;
   padding: 13px 0;
@@ -142,11 +200,15 @@ header {
   color: var(--text);
   background: transparent;
 }
+
 .search-box:focus-within {
-  border-color: var(--red);
+  border-color: var(--gold);
   box-shadow: 0 0 15px var(--shadow);
 }
+
+/* SECTIONS */
 .section { padding: 24px 0 38px; }
+
 .section-heading {
   display: flex;
   align-items: center;
@@ -154,34 +216,42 @@ header {
   gap: 12px;
   margin-bottom: 18px;
 }
+
 .section-heading h2 { margin: 0; font-size: 25px; }
-.section-heading h2 span { color: var(--red); }
+.section-heading h2 span { color: var(--gold); }
 .section-heading p { color: var(--muted); font-size: 13px; }
 
+/* FILTERS */
 .filters {
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
   margin-bottom: 20px;
 }
+
 .filter {
   padding: 9px 14px;
   border-radius: 25px;
   background: var(--panel);
   border: 1px solid var(--border);
   color: var(--text);
-}
-.filter.active, .filter:hover {
-  background: var(--red);
-  color: white;
-  border-color: var(--red);
+  transition: .2s;
 }
 
+.filter.active,
+.filter:hover {
+  background: var(--red);
+  color: white;
+  border-color: var(--gold);
+}
+
+/* APP CARDS */
 .app-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
+
 .app-card {
   min-width: 0;
   background: var(--panel);
@@ -190,35 +260,44 @@ header {
   overflow: hidden;
   transition: transform .25s, border-color .25s, box-shadow .25s;
   animation: appear .35s ease both;
+  box-shadow: 0 5px 22px #0003;
 }
+
 .app-card:hover {
   transform: translateY(-5px);
-  border-color: var(--red);
+  border-color: var(--gold);
   box-shadow: 0 8px 30px var(--shadow);
 }
+
 .app-image {
   height: 175px;
-  background: var(--panel2);
+  background:
+    linear-gradient(135deg, #176b3a18, #d91e3618),
+    var(--panel2);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 12px;
   overflow: hidden;
 }
+
 .app-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   border-radius: 12px;
 }
+
 .app-info { padding: 17px; }
 .app-info h3 { margin: 0 0 9px; font-size: 17px; }
+
 .app-info p {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.6;
   min-height: 39px;
 }
+
 .app-meta {
   display: flex;
   justify-content: space-between;
@@ -226,14 +305,17 @@ header {
   gap: 8px;
   margin-bottom: 14px;
 }
+
 .tag {
   font-size: 10px;
   font-weight: 800;
-  color: var(--red);
-  background: var(--shadow);
+  color: var(--gold);
+  background: #b89b4a20;
+  border: 1px solid #b89b4a33;
   padding: 6px 8px;
   border-radius: 6px;
 }
+
 .download-btn { width: 100%; }
 
 .empty {
@@ -244,36 +326,47 @@ header {
   border: 1px dashed var(--border);
   border-radius: 15px;
 }
+
+/* SOCIAL LINKS */
 .social-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 13px;
 }
+
 .social-card {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 15px;
   padding: 19px 12px;
   text-align: center;
-  transition: border-color .2s, transform .2s;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
 }
+
 .social-card:hover {
-  border-color: var(--red);
+  border-color: var(--gold);
   transform: translateY(-3px);
+  box-shadow: 0 0 18px var(--shadow);
 }
+
 .social-card strong { display: block; margin-bottom: 7px; }
 .social-card small { color: var(--muted); }
 
+/* COMMUNITY */
 .community {
   padding: 27px;
   border-radius: 20px;
-  background: linear-gradient(120deg, var(--panel2), var(--panel));
+  background:
+    radial-gradient(ellipse at top, #176b3a30, transparent 75%),
+    linear-gradient(120deg, var(--panel2), var(--panel));
   border: 1px solid var(--border);
   text-align: center;
 }
+
 .community h2 { margin-top: 0; }
 .community p { color: var(--muted); line-height: 1.6; }
 
+/* FOOTER */
 footer {
   border-top: 1px solid var(--border);
   padding: 25px 0;
@@ -284,20 +377,52 @@ footer {
   line-height: 1.8;
 }
 
+/* SNOW ANIMATION */
+#snowLayer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.snowflake {
+  position: absolute;
+  top: -25px;
+  color: #fff;
+  opacity: .72;
+  user-select: none;
+  animation: christmasSnow linear infinite;
+  text-shadow: 0 0 8px #ffffff88;
+}
+
+@keyframes christmasSnow {
+  from { transform: translate3d(0, -20px, 0) rotate(0deg); }
+  to { transform: translate3d(45px, 110vh, 0) rotate(360deg); }
+}
+
 @keyframes appear {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* MOBILE */
 @media (max-width: 760px) {
-  .app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .app-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
   .app-image { height: 135px; }
   .app-info { padding: 12px; }
   .app-info h3 { font-size: 15px; }
   .hero { padding-top: 48px; }
   .section-heading h2 { font-size: 22px; }
 }
+
 @media (max-width: 420px) {
   .logo { font-size: 16px; }
+  .site-logo { width: 38px; height: 38px; }
   .nav { min-height: 62px; }
   .nav-actions .btn { padding: 9px; font-size: 12px; }
   .app-grid { gap: 9px; }
@@ -305,43 +430,64 @@ footer {
   .app-info p { font-size: 12px; }
   .social-grid { gap: 8px; }
   .social-card { padding: 15px 5px; font-size: 13px; }
+  .christmas-greeting { font-size: 10px; }
 }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
     scroll-behavior: auto !important;
   }
+
+  #snowLayer { display: none; }
 }
-</style></head><body>
+</style>
+</head>
+
+<body>
+
+<div class="christmas-greeting">
+  🎄 MERRY CHRISTMAS • HAARIS MODS ❄️
+</div>
+<div id="snowLayer" aria-hidden="true"></div>
+
 <header>
   <div class="container nav">
     <a href="#" class="logo">
       <img src="logo.png" alt="HAARIS MODS Logo" class="site-logo">
       HAARIS <span>MODS 😎</span>
     </a>
+
     <div class="nav-actions">
       <button class="btn icon-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
       <a class="btn btn-red" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">✈ Join</a>
     </div>
   </div>
-</header><main>
+</header>
+
+<main>
   <section class="hero">
     <div class="container">
-      <span class="pill">⚡ PREMIUM APP HUB</span>
+      <span class="pill">🎄 CHRISTMAS PREMIUM APP HUB</span>
       <h1>WELCOME TO<br><span>HAARIS MODS</span></h1>
       <p>Discover apps, explore tools and find your next favourite download. Simple, stylish and mobile-friendly.</p>
+
       <div class="hero-actions">
         <a href="#apps" class="btn btn-red">🚀 Explore Apps</a>
         <a href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer" class="btn">✈ Telegram Community</a>
       </div>
     </div>
-  </section>  <section class="container search-area" aria-label="Search apps">
+  </section>
+
+  <section class="container search-area" aria-label="Search apps">
     <label class="search-box">
       <span>🔍</span>
       <input id="searchInput" type="search" placeholder="Search apps... e.g. CapCut" autocomplete="off">
     </label>
-  </section>  <section class="container section" id="apps">
+  </section>
+
+  <section class="container section" id="apps">
     <div class="section-heading">
       <div>
         <h2>🆕 Latest <span>Apps</span></h2>
@@ -351,58 +497,75 @@ footer {
     </div>
     <div class="app-grid" id="latestGrid"></div>
     <div class="empty" id="latestEmpty">No latest apps found.</div>
-  </section>  <section class="container section" id="all-apps">
+  </section>
+
+  <section class="container section" id="all-apps">
     <div class="section-heading">
       <div>
         <h2>Explore <span>Apps</span></h2>
         <p>Choose a category and find your app</p>
       </div>
     </div>
+
     <div class="filters" id="filters">
       <button class="filter active" data-category="All">All Apps</button>
       <button class="filter" data-category="Video Editors">🎬 Video Editors</button>
       <button class="filter" data-category="Music">🎵 Music</button>
       <button class="filter" data-category="Tools">🧰 Tools</button>
     </div>
+
     <div class="app-grid" id="appGrid"></div>
     <div class="empty" id="allEmpty">No apps match your search.</div>
-  </section>  <section class="container section">
+  </section>
+
+  <section class="container section">
     <div class="section-heading">
       <h2>Follow <span>Us</span> ❤️</h2>
     </div>
+
     <div class="social-grid">
       <a class="social-card" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">
         <strong>✈ Telegram</strong>
         <small>Join our community</small>
       </a>
+
       <a class="social-card" href="https://www.instagram.com/haaris_mods?xtok=MXZrbTc3ZDVpZDk2cA==" target="_blank" rel="noopener noreferrer">
         <strong>📸 Instagram</strong>
         <small>@haaris_mods</small>
       </a>
+
       <a class="social-card" href="https://youtube.com/@unidentify_2.0?si=Ff3ctZKYT68OmbXA" target="_blank" rel="noopener noreferrer">
         <strong>▶ YouTube</strong>
         <small>Subscribe to channel</small>
       </a>
+
       <a class="social-card" href="https://t.me/+i3LUiDabXd5kZjZl" target="_blank" rel="noopener noreferrer">
         <strong>📩 Apps Requests</strong>
         <small>Request your favourite apps</small>
       </a>
     </div>
-  </section>  <section class="container section">
+  </section>
+
+  <section class="container section">
     <div class="community">
-      <h2>🔥 Join HAARIS APPS</h2>
+      <h2>🎁 Join HAARIS APPS</h2>
       <p>Join the Telegram community for app updates and new posts.</p>
       <a class="btn btn-red" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">Join Telegram ↗</a>
     </div>
   </section>
-</main><footer>
+</main>
+
+<footer>
   <div class="container">
     <strong>HAARIS MODS 😎</strong><br>
     Made with ❤️ for the community.<br>
     Only download apps you trust and have permission to use.<br>
+    <a href="privacy.html" style="color:var(--gold)">Privacy Policy</a><br>
     © <span id="year"></span> HAARIS MODS
   </div>
-</footer><script>
+</footer>
+
+<script>
 "use strict";
 
 const STARTER_APPS = [
@@ -638,6 +801,35 @@ document.getElementById("themeBtn").addEventListener("click", () => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+/* ❄️ CHRISTMAS SNOWFALL */
+(function createChristmasSnow() {
+  const layer = document.getElementById("snowLayer");
+  if (!layer) return;
+
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (reduceMotion) return;
+
+  const count = window.matchMedia("(max-width: 600px)").matches
+    ? 22
+    : 40;
+
+  for (let i = 0; i < count; i++) {
+    const snow = document.createElement("span");
+    snow.className = "snowflake";
+    snow.textContent = Math.random() > 0.5 ? "❄" : "❅";
+    snow.style.left = Math.random() * 100 + "%";
+    snow.style.fontSize = (10 + Math.random() * 12) + "px";
+    snow.style.animationDuration = (7 + Math.random() * 10) + "s";
+    snow.style.animationDelay = (-Math.random() * 15) + "s";
+    layer.appendChild(snow);
+  }
+})();
+
 render();
-</script></body>
+</script>
+
+</body>
 </html>
