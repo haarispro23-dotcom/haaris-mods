@@ -1,30 +1,36 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
-<meta name="description" content="HAARIS MODS - Premium apps, tools and updates.">
-<title>HAARIS MOD‌S | Premium Apps</title><style>
+<meta name="theme-color" content="#080604">
+<meta name="description" content="HAARIS MODS - Premium apps, tools and Diwali updates.">
+<title>HAARIS MODS | Diwali Premium Apps</title>
+
+<style>
 :root {
-  --bg: #080808;
-  --panel: #121212;
-  --panel2: #1a1a1a;
-  --text: #f7f7f7;
-  --muted: #a6a6a6;
-  --red: #ff2638;
-  --border: #292929;
-  --shadow: rgba(255, 25, 45, .16);
+  --bg: #080604;
+  --panel: #15100a;
+  --panel2: #211609;
+  --text: #fff7e6;
+  --muted: #c4b69d;
+  --red: #ff5b16;
+  --gold: #ffc857;
+  --border: #513719;
+  --shadow: rgba(255, 166, 0, .19);
 }
 body.light {
-  --bg: #f5f5f7;
+  --bg: #fff8eb;
   --panel: #ffffff;
-  --panel2: #eeeeF2;
-  --text: #171717;
-  --muted: #666666;
-  --red: #df1027;
-  --border: #dddddf;
-  --shadow: rgba(220, 0, 30, .10);
+  --panel2: #fff0d5;
+  --text: #291706;
+  --muted: #725b40;
+  --red: #d94b0b;
+  --gold: #b77900;
+  --border: #ead2a7;
+  --shadow: rgba(220, 126, 0, .13);
 }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -33,12 +39,61 @@ body {
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
   transition: background .25s, color .25s;
+  overflow-x: hidden;
 }
 a { color: inherit; text-decoration: none; }
-button, input, select { font: inherit; }
+button, input { font: inherit; }
 button { cursor: pointer; }
 .container { width: min(1100px, 92%); margin: auto; }
 
+/* DIWALI DECORATIONS */
+#fireworks {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+}
+.festival-bar {
+  padding: 10px 12px;
+  text-align: center;
+  color: #fff1c2;
+  background: linear-gradient(90deg, #3b1604, #9e3d06, #5a2505);
+  border-bottom: 1px solid #d99a32;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+body.light .festival-bar { color: #fff; }
+.diya-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 16px 0 4px;
+  font-size: 25px;
+}
+.diya {
+  display: inline-block;
+  animation: diyaGlow 1.5s ease-in-out infinite alternate;
+}
+.diya:nth-child(2) { animation-delay: .5s; }
+.diya:nth-child(3) { animation-delay: 1s; }
+
+@keyframes diyaGlow {
+  from { transform: translateY(0) scale(1); filter: drop-shadow(0 0 3px #ff9d00); }
+  to { transform: translateY(-5px) scale(1.1); filter: drop-shadow(0 0 13px #ffbd38); }
+}
+@keyframes appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes goldShine {
+  0%, 100% { text-shadow: 0 0 8px rgba(255,185,45,.25); }
+  50% { text-shadow: 0 0 22px rgba(255,185,45,.7); }
+}
+
+/* HEADER */
 header {
   position: sticky;
   top: 0;
@@ -61,8 +116,10 @@ header {
   vertical-align: middle;
   margin-right: 8px;
 }
-.logo span { color: var(--red); }
+.logo { font-weight: 900; }
+.logo span { color: var(--gold); }
 .nav-actions { display: flex; gap: 8px; align-items: center; }
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -79,37 +136,41 @@ header {
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 18px var(--shadow);
+  border-color: var(--gold);
 }
 .btn-red {
-  background: var(--red);
-  color: white;
-  border-color: var(--red);
+  background: linear-gradient(135deg, #ff7a18, #d93808);
+  color: #fff;
+  border-color: #ff9a32;
 }
 .icon-btn { padding: 10px 12px; }
 
+/* HERO */
 .hero {
-  padding: 65px 0 38px;
+  padding: 48px 0 30px;
   text-align: center;
-  background: radial-gradient(ellipse at top, var(--shadow), transparent 65%);
+  background:
+    radial-gradient(ellipse at top, rgba(255,166,0,.17), transparent 65%);
 }
 .pill {
   display: inline-block;
-  color: var(--red);
-  border: 1px solid var(--red);
+  color: var(--gold);
+  border: 1px solid var(--gold);
   border-radius: 30px;
   padding: 7px 13px;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
+  background: var(--shadow);
 }
 .hero h1 {
   font-size: clamp(36px, 8vw, 66px);
-  margin: 20px 0 12px;
+  margin: 18px 0 12px;
   line-height: 1.08;
 }
 .hero h1 span {
-  color: var(--red);
-  text-shadow: 0 0 25px var(--shadow);
+  color: var(--gold);
+  animation: goldShine 2.5s ease-in-out infinite;
 }
 .hero p {
   color: var(--muted);
@@ -124,6 +185,7 @@ header {
   flex-wrap: wrap;
 }
 
+/* SEARCH */
 .search-area { padding: 18px 0 28px; }
 .search-box {
   display: flex;
@@ -143,9 +205,11 @@ header {
   background: transparent;
 }
 .search-box:focus-within {
-  border-color: var(--red);
+  border-color: var(--gold);
   box-shadow: 0 0 15px var(--shadow);
 }
+
+/* SECTIONS */
 .section { padding: 24px 0 38px; }
 .section-heading {
   display: flex;
@@ -155,9 +219,10 @@ header {
   margin-bottom: 18px;
 }
 .section-heading h2 { margin: 0; font-size: 25px; }
-.section-heading h2 span { color: var(--red); }
+.section-heading h2 span { color: var(--gold); }
 .section-heading p { color: var(--muted); font-size: 13px; }
 
+/* FILTERS */
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -172,11 +237,12 @@ header {
   color: var(--text);
 }
 .filter.active, .filter:hover {
-  background: var(--red);
+  background: linear-gradient(135deg, #ff8b20, #d94b0b);
   color: white;
-  border-color: var(--red);
+  border-color: var(--gold);
 }
 
+/* APP CARDS */
 .app-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -184,7 +250,7 @@ header {
 }
 .app-card {
   min-width: 0;
-  background: var(--panel);
+  background: linear-gradient(145deg, var(--panel), var(--bg));
   border: 1px solid var(--border);
   border-radius: 19px;
   overflow: hidden;
@@ -193,7 +259,7 @@ header {
 }
 .app-card:hover {
   transform: translateY(-5px);
-  border-color: var(--red);
+  border-color: var(--gold);
   box-shadow: 0 8px 30px var(--shadow);
 }
 .app-image {
@@ -229,10 +295,11 @@ header {
 .tag {
   font-size: 10px;
   font-weight: 800;
-  color: var(--red);
+  color: var(--gold);
   background: var(--shadow);
   padding: 6px 8px;
   border-radius: 6px;
+  border: 1px solid var(--border);
 }
 .download-btn { width: 100%; }
 
@@ -244,6 +311,8 @@ header {
   border: 1px dashed var(--border);
   border-radius: 15px;
 }
+
+/* SOCIALS */
 .social-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -255,11 +324,12 @@ header {
   border-radius: 15px;
   padding: 19px 12px;
   text-align: center;
-  transition: border-color .2s, transform .2s;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
 }
 .social-card:hover {
-  border-color: var(--red);
+  border-color: var(--gold);
   transform: translateY(-3px);
+  box-shadow: 0 0 15px var(--shadow);
 }
 .social-card strong { display: block; margin-bottom: 7px; }
 .social-card small { color: var(--muted); }
@@ -268,10 +338,11 @@ header {
   padding: 27px;
   border-radius: 20px;
   background: linear-gradient(120deg, var(--panel2), var(--panel));
-  border: 1px solid var(--border);
+  border: 1px solid var(--gold);
+  box-shadow: 0 0 25px var(--shadow);
   text-align: center;
 }
-.community h2 { margin-top: 0; }
+.community h2 { margin-top: 0; color: var(--gold); }
 .community p { color: var(--muted); line-height: 1.6; }
 
 footer {
@@ -283,17 +354,14 @@ footer {
   font-size: 12px;
   line-height: 1.8;
 }
+footer strong { color: var(--gold); }
 
-@keyframes appear {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
 @media (max-width: 760px) {
   .app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .app-image { height: 135px; }
   .app-info { padding: 12px; }
   .app-info h3 { font-size: 15px; }
-  .hero { padding-top: 48px; }
+  .hero { padding-top: 35px; }
   .section-heading h2 { font-size: 22px; }
 }
 @media (max-width: 420px) {
@@ -305,6 +373,7 @@ footer {
   .app-info p { font-size: 12px; }
   .social-grid { gap: 8px; }
   .social-card { padding: 15px 5px; font-size: 13px; }
+  .festival-bar { font-size: 10px; letter-spacing: 1px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -313,7 +382,16 @@ footer {
     scroll-behavior: auto !important;
   }
 }
-</style></head><body>
+</style>
+</head>
+
+<body>
+<canvas id="fireworks" aria-hidden="true"></canvas>
+
+<div class="festival-bar">
+  🪔 HAPPY DIWALI • HAARIS MODS • FESTIVE PREMIUM EDITION 🪔
+</div>
+
 <header>
   <div class="container nav">
     <a href="#" class="logo">
@@ -325,23 +403,43 @@ footer {
       <a class="btn btn-red" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">✈ Join</a>
     </div>
   </div>
-</header><main>
+</header>
+
+<main>
   <section class="hero">
     <div class="container">
-      <span class="pill">⚡ PREMIUM APP HUB</span>
-      <h1>WELCOME TO<br><span>HAARIS MODS</span></h1>
-      <p>Discover apps, explore tools and find your next favourite download. Simple, stylish and mobile-friendly.</p>
+      <span class="pill">🪔 DIWALI PREMIUM SPECIAL 🪔</span>
+
+      <div class="diya-row" aria-label="Decorative diyas">
+        <span class="diya">🪔</span>
+        <span class="diya">✨</span>
+        <span class="diya">🪔</span>
+      </div>
+
+      <h1>HAPPY DIWALI<br><span>HAARIS MODS</span></h1>
+
+      <p>
+        Celebrate the festival of lights! Discover apps, explore tools
+        and find your next favourite download. Premium style, made for you.
+      </p>
+
       <div class="hero-actions">
         <a href="#apps" class="btn btn-red">🚀 Explore Apps</a>
-        <a href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer" class="btn">✈ Telegram Community</a>
+        <a href="https://t.me/haarisapps" target="_blank"
+           rel="noopener noreferrer" class="btn">✈ Telegram Community</a>
       </div>
     </div>
-  </section>  <section class="container search-area" aria-label="Search apps">
+  </section>
+
+  <section class="container search-area" aria-label="Search apps">
     <label class="search-box">
       <span>🔍</span>
-      <input id="searchInput" type="search" placeholder="Search apps... e.g. CapCut" autocomplete="off">
+      <input id="searchInput" type="search"
+             placeholder="Search apps... e.g. CapCut" autocomplete="off">
     </label>
-  </section>  <section class="container section" id="apps">
+  </section>
+
+  <section class="container section" id="apps">
     <div class="section-heading">
       <div>
         <h2>🆕 Latest <span>Apps</span></h2>
@@ -351,58 +449,82 @@ footer {
     </div>
     <div class="app-grid" id="latestGrid"></div>
     <div class="empty" id="latestEmpty">No latest apps found.</div>
-  </section>  <section class="container section" id="all-apps">
+  </section>
+
+  <section class="container section" id="all-apps">
     <div class="section-heading">
       <div>
         <h2>Explore <span>Apps</span></h2>
         <p>Choose a category and find your app</p>
       </div>
     </div>
+
     <div class="filters" id="filters">
       <button class="filter active" data-category="All">All Apps</button>
       <button class="filter" data-category="Video Editors">🎬 Video Editors</button>
       <button class="filter" data-category="Music">🎵 Music</button>
       <button class="filter" data-category="Tools">🧰 Tools</button>
     </div>
+
     <div class="app-grid" id="appGrid"></div>
     <div class="empty" id="allEmpty">No apps match your search.</div>
-  </section>  <section class="container section">
+  </section>
+
+  <section class="container section">
     <div class="section-heading">
       <h2>Follow <span>Us</span> ❤️</h2>
     </div>
+
     <div class="social-grid">
-      <a class="social-card" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">
+      <a class="social-card" href="https://t.me/haarisapps"
+         target="_blank" rel="noopener noreferrer">
         <strong>✈ Telegram</strong>
         <small>Join our community</small>
       </a>
-      <a class="social-card" href="https://www.instagram.com/haaris_mods?xtok=MXZrbTc3ZDVpZDk2cA==" target="_blank" rel="noopener noreferrer">
+
+      <a class="social-card"
+         href="https://www.instagram.com/haaris_mods?xtok=MXZrbTc3ZDVpZDk2cA=="
+         target="_blank" rel="noopener noreferrer">
         <strong>📸 Instagram</strong>
         <small>@haaris_mods</small>
       </a>
-      <a class="social-card" href="https://youtube.com/@unidentify_2.0?si=Ff3ctZKYT68OmbXA" target="_blank" rel="noopener noreferrer">
+
+      <a class="social-card"
+         href="https://youtube.com/@unidentify_2.0?si=Ff3ctZKYT68OmbXA"
+         target="_blank" rel="noopener noreferrer">
         <strong>▶ YouTube</strong>
         <small>Subscribe to channel</small>
       </a>
-      <a class="social-card" href="https://t.me/+i3LUiDabXd5kZjZl" target="_blank" rel="noopener noreferrer">
+
+      <a class="social-card"
+         href="https://t.me/+i3LUiDabXd5kZjZl"
+         target="_blank" rel="noopener noreferrer">
         <strong>📩 Apps Requests</strong>
         <small>Request your favourite apps</small>
       </a>
     </div>
-  </section>  <section class="container section">
+  </section>
+
+  <section class="container section">
     <div class="community">
-      <h2>🔥 Join HAARIS APPS</h2>
+      <h2>🪔 Celebrate Diwali With HAARIS MODS</h2>
       <p>Join the Telegram community for app updates and new posts.</p>
-      <a class="btn btn-red" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">Join Telegram ↗</a>
+      <a class="btn btn-red" href="https://t.me/haarisapps"
+         target="_blank" rel="noopener noreferrer">Join Telegram ↗</a>
     </div>
   </section>
-</main><footer>
+</main>
+
+<footer>
   <div class="container">
     <strong>HAARIS MODS 😎</strong><br>
-    Made with ❤️ for the community.<br>
+    🪔 Happy Diwali — Made with ❤️ for the community.<br>
     Only download apps you trust and have permission to use.<br>
     © <span id="year"></span> HAARIS MODS
   </div>
-</footer><script>
+</footer>
+
+<script>
 "use strict";
 
 const STARTER_APPS = [
@@ -638,6 +760,91 @@ document.getElementById("themeBtn").addEventListener("click", () => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+/* FIREWORKS ANIMATION */
+(function startFireworks() {
+  const canvas = document.getElementById("fireworks");
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const reduceMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduceMotion) {
+    canvas.style.display = "none";
+    return;
+  }
+
+  let width = 0;
+  let height = 0;
+  let particles = [];
+  let lastBurst = 0;
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function burst(x, y) {
+    const colors = ["#ffc857", "#ff7a18", "#ffcf70", "#ff453a"];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const count = 24;
+
+    for (let i = 0; i < count; i++) {
+      const angle = (Math.PI * 2 * i) / count;
+      const speed = 0.7 + Math.random() * 2;
+      particles.push({
+        x, y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        life: 35 + Math.random() * 20,
+        maxLife: 55,
+        color
+      });
+    }
+  }
+
+  function animate(timestamp) {
+    ctx.clearRect(0, 0, width, height);
+
+    if (timestamp - lastBurst > 1700) {
+      burst(
+        width * (0.15 + Math.random() * 0.7),
+        height * (0.12 + Math.random() * 0.3)
+      );
+      lastBurst = timestamp;
+    }
+
+    particles = particles.filter(p => p.life > 0);
+
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.025;
+      p.life--;
+
+      ctx.globalAlpha = Math.max(0, p.life / p.maxLife);
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 1.7, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(animate);
+  }
+
+  resize();
+  window.addEventListener("resize", resize);
+  requestAnimationFrame(animate);
+})();
+
 render();
-</script></body>
+</script>
+</body>
 </html>
