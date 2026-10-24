@@ -1,67 +1,420 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#100907">
-<meta name="description" content="HAARIS MODS - Diwali special premium apps, tools and updates.">
-<title>HAARIS MODS 🪔 | Diwali Special</title>
-<link rel="manifest" href="manifest.json">
-<style>
-:root{--bg:#100907;--panel:#1b100d;--panel2:#281710;--text:#fff7e8;--muted:#c7b5a0;--red:#ff3b30;--gold:#ffc857;--border:#503021;--shadow:rgba(255,166,35,.2)}
-body.light{--bg:#fff8ec;--panel:#fff;--panel2:#fff0d5;--text:#29160c;--muted:#796454;--red:#d92920;--gold:#b77700;--border:#ead5b7;--shadow:rgba(220,130,0,.12)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,rgba(255,170,35,.11),transparent 45%),var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;transition:background .25s,color .25s}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}.container{width:min(1100px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--border)}.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:10px}.site-logo{width:44px;height:44px;object-fit:contain;border-radius:50%;vertical-align:middle;margin-right:7px}.logo{font-weight:900}.logo span,.gold{color:var(--gold)}.nav-actions{display:flex;gap:7px;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--border);border-radius:12px;padding:10px 13px;color:var(--text);background:var(--panel2);font-weight:700;transition:.2s}.btn:hover{transform:translateY(-2px);box-shadow:0 0 18px var(--shadow)}.btn-red{background:var(--red);color:white;border-color:var(--red)}.btn-gold{background:linear-gradient(120deg,#ffe19a,#d99822);color:#29160c;border-color:var(--gold)}.icon-btn{padding:10px}
-.hero{text-align:center;padding:55px 0 35px;background:radial-gradient(ellipse at top,rgba(255,183,58,.17),transparent 68%);position:relative;overflow:hidden}.pill{display:inline-block;color:var(--gold);border:1px solid var(--gold);border-radius:30px;padding:8px 14px;font-size:12px;font-weight:900;letter-spacing:1px}.hero h1{font-size:clamp(36px,8vw,66px);margin:20px 0 12px;line-height:1.08}.hero h1 span{background:linear-gradient(90deg,#ffe9a8,#ffad33,#ff4b2e);background-clip:text;color:transparent}.hero p{color:var(--muted);line-height:1.7;max-width:590px;margin:0 auto 24px}.hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.lights{height:14px;max-width:850px;margin:0 auto 20px;display:flex;justify-content:space-around}.lights span{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold);animation:twinkle 1.5s infinite alternate}.lights span:nth-child(2n){background:#ff4938;box-shadow:0 0 12px #ff4938}
-.search-area{padding:18px 0 28px}.search-box{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:5px 15px}.search-box input{width:100%;padding:13px 0;border:0;outline:0;color:var(--text);background:transparent}.search-box:focus-within{border-color:var(--gold);box-shadow:0 0 15px var(--shadow)}
-.section{padding:24px 0 38px}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.section-heading h2{margin:0;font-size:25px}.section-heading h2 span{color:var(--gold)}.section-heading p{color:var(--muted);font-size:13px}.filters,.tools-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px}.filter{padding:9px 14px;border-radius:25px;background:var(--panel);border:1px solid var(--border);color:var(--text)}.filter.active,.filter:hover{background:var(--red);color:white;border-color:var(--red)}.tools-row select{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px}
-.app-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.app-card{min-width:0;background:linear-gradient(160deg,var(--panel),var(--panel2));border:1px solid var(--border);border-radius:19px;overflow:hidden;transition:.25s;animation:appear .35s ease both}.app-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 8px 30px var(--shadow)}.app-image{height:175px;background:var(--panel2);display:flex;align-items:center;justify-content:center;padding:12px;overflow:hidden}.app-image img{width:100%;height:100%;object-fit:contain;border-radius:12px}.app-info{padding:16px}.app-info h3{margin:0 0 9px;font-size:17px}.app-info p{color:var(--muted);font-size:13px;line-height:1.6;min-height:39px}.app-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}.tag{font-size:10px;font-weight:800;color:var(--gold);background:var(--shadow);padding:6px 8px;border-radius:6px}.badge{font-size:10px;font-weight:900;padding:5px 7px;border-radius:6px;background:var(--red);color:white}.card-actions{display:grid;grid-template-columns:1fr auto auto;gap:7px}.card-actions .btn{padding:10px 9px;font-size:12px}.fav-btn{min-width:40px}.fav-btn.is-fav{color:#ff5366;border-color:#ff5366}.empty{display:none;text-align:center;padding:35px 10px;color:var(--muted);border:1px dashed var(--border);border-radius:15px}
-.social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.social-card{background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:19px 12px;text-align:center;transition:.2s}.social-card:hover{border-color:var(--gold);transform:translateY(-3px)}.social-card strong{display:block;margin-bottom:7px}.social-card small{color:var(--muted)}.community{padding:27px;border-radius:20px;background:linear-gradient(120deg,var(--panel2),var(--panel));border:1px solid var(--gold);text-align:center}.community p{color:var(--muted);line-height:1.6}footer{border-top:1px solid var(--border);padding:25px 0;margin-top:25px;text-align:center;color:var(--muted);font-size:12px;line-height:1.8}
-.bottom-nav{position:fixed;z-index:15;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:5px;padding:7px;background:var(--panel);border:1px solid var(--border);border-radius:18px;box-shadow:0 8px 30px #0005}.bottom-nav a,.bottom-nav button{border:0;background:transparent;color:var(--text);padding:9px 10px;border-radius:10px;font-size:12px}.bottom-nav a:hover,.bottom-nav button:hover{background:var(--panel2)}.to-top{position:fixed;right:16px;bottom:85px;z-index:14;display:none;border:0;border-radius:50%;width:44px;height:44px;background:var(--gold);color:#29160c;font-size:20px}
-.modal-backdrop{position:fixed;inset:0;background:#000b;z-index:50;display:none;align-items:center;justify-content:center;padding:20px}.modal{width:min(460px,100%);background:var(--panel);border:1px solid var(--gold);border-radius:20px;padding:24px}.modal h2{margin-top:0;color:var(--gold)}.modal p{color:var(--muted);line-height:1.6}.modal-actions{display:flex;gap:10px;flex-wrap:wrap}.settings-row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--border)}
-body.festival-on .hero:after{content:"✦  ✧  🪔  ✧  ✦";display:block;color:var(--gold);opacity:.7;letter-spacing:10px;margin-top:18px;animation:glow 2s infinite alternate}
-@keyframes appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes twinkle{from{opacity:.35;transform:scale(.7)}to{opacity:1;transform:scale(1.15)}}@keyframes glow{from{text-shadow:0 0 4px var(--gold)}to{text-shadow:0 0 18px var(--gold)}}
-@media(max-width:760px){.app-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.app-image{height:135px}.app-info{padding:12px}.app-info h3{font-size:15px}.hero{padding-top:42px}.section-heading h2{font-size:22px}.social-grid{grid-template-columns:repeat(2,1fr)}.bottom-nav{max-width:95%;width:max-content}.bottom-nav a,.bottom-nav button{padding:9px 8px}}
-@media(max-width:420px){.logo{font-size:13px}.site-logo{width:34px;height:34px}.nav{min-height:60px}.nav-actions .btn{padding:8px;font-size:11px}.app-grid{gap:9px}.app-image{height:110px}.app-info p{font-size:12px}.card-actions{grid-template-columns:1fr auto}.share-btn{display:none}.social-card{padding:15px 5px;font-size:13px}.bottom-nav{gap:0}.bottom-nav a,.bottom-nav button{font-size:11px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-</style>
-</head>
-<body class="festival-on">
-<header><div class="container nav">
-<a href="#" class="logo"><img src="logo.png" alt="HAARIS MODS Logo" class="site-logo"> HAARIS <span>MODS 🪔</span></a>
-<div class="nav-actions"><button class="btn icon-btn" id="themeBtn" aria-label="Toggle theme">☀️</button><button class="btn icon-btn" id="settingsBtn" aria-label="Settings">⚙️</button><button class="btn btn-gold" id="installBtn" hidden>📲 Install</button><a class="btn btn-red" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">✈ Join</a></div>
-</div></header>
-<main>
-<section class="hero"><div class="container"><div class="lights" id="lights" aria-hidden="true"></div><span class="pill">🪔 DIWALI SPECIAL • PREMIUM APP HUB</span><h1>HAPPY DIWALI<br><span>HAARIS MODS</span></h1><p>Celebrate the festival of lights with your favourite apps, useful tools and latest updates. Premium black, gold and red style — made for mobile.</p><div class="hero-actions"><a href="#apps" class="btn btn-gold">✨ Explore Apps</a><a href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer" class="btn">✈ Telegram Community</a></div><p><label><input id="festivalToggle" type="checkbox" checked> 🪔 Festival lights and effects</label></p></div></section>
-<section class="container search-area"><label class="search-box"><span>🔍</span><input id="searchInput" type="search" placeholder="Search apps... e.g. CapCut" autocomplete="off"></label></section>
-<section class="container section" id="apps"><div class="section-heading"><div><h2>🆕 Latest <span>Apps</span></h2><p>Recently added apps</p></div><span class="tag" id="appCount">8 APPS</span></div><div class="app-grid" id="latestGrid"></div><div class="empty" id="latestEmpty">No latest apps found.</div></section>
-<section class="container section" id="all-apps"><div class="section-heading"><div><h2>Explore <span>Apps</span></h2><p>Choose a category and find your app</p></div></div>
-<div class="filters" id="filters"><button class="filter active" data-category="All">All Apps</button><button class="filter" data-category="Video Editors">🎬 Video Editors</button><button class="filter" data-category="Music">🎵 Music</button><button class="filter" data-category="Tools">🧰 Tools</button><button class="filter" data-category="Favorites">❤️ Favorites</button><button class="filter" data-category="Recent">🕘 Recent</button></div>
-<div class="tools-row"><label for="sortSelect">Sort:</label><select id="sortSelect"><option value="newest">Latest first</option><option value="oldest">Oldest first</option><option value="az">Name A–Z</option><option value="za">Name Z–A</option></select></div><div class="app-grid" id="appGrid"></div><div class="empty" id="allEmpty">No apps match your search.</div></section>
-<section class="container section"><div class="section-heading"><h2>Follow <span>Us</span> ❤️</h2></div><div class="social-grid">
-<a class="social-card" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer"><strong>✈ Telegram</strong><small>Join our community</small></a>
-<a class="social-card" href="https://www.instagram.com/haaris_mods?xtok=MXZrbTc3ZDVpZDk2cA==" target="_blank" rel="noopener noreferrer"><strong>📸 Instagram</strong><small>@haaris_mods</small></a>
-<a class="social-card" href="https://youtube.com/@unidentify_2.0?si=Ff3ctZKYT68OmbXA" target="_blank" rel="noopener noreferrer"><strong>▶ YouTube</strong><small>Subscribe to channel</small></a>
-<a class="social-card" href="https://t.me/+i3LUiDabXd5kZjZl" target="_blank" rel="noopener noreferrer"><strong>📩 Apps Requests</strong><small>Request your favourite apps</small></a>
-</div></section>
-<section class="container section"><div class="community"><h2>🪔 Happy Diwali from HAARIS MODS!</h2><p>Join the Telegram community for app updates, new posts and requests.</p><a class="btn btn-red" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">Join Telegram ↗</a></div></section>
-</main><footer><div class="container"><strong>HAARIS MODS 🪔</strong><br>Made with ❤️ for the community.<br>Only download apps you trust and have permission to use.<br>© <span id="year"></span> HAARIS MODS</div></footer>
-<nav class="bottom-nav" aria-label="Quick navigation"><a href="#apps">🆕 Latest</a><a href="#all-apps">📱 Apps</a><button id="favoritesNav">❤️ Favs</button><button id="topNav">⬆ Top</button></nav><button class="to-top" id="toTop" aria-label="Back to top">↑</button>
-<div class="modal-backdrop" id="announcementModal" role="dialog" aria-modal="true"><div class="modal"><h2>🪔 Happy Diwali!</h2><p>Welcome to HAARIS MODS Diwali Special! Explore the app collection and join our Telegram community for updates.</p><div class="modal-actions"><button class="btn btn-gold" id="announcementJoin">✈ Join Telegram</button><button class="btn" id="closeAnnouncement">Continue</button></div></div></div>
-<div class="modal-backdrop" id="settingsModal" role="dialog" aria-modal="true"><div class="modal"><h2>⚙️ Settings</h2><div class="settings-row"><span>Festival effects</span><input type="checkbox" id="settingsFestival" checked></div><div class="settings-row"><span>Show welcome popup next time</span><input type="checkbox" id="popupToggle" checked></div><div class="settings-row"><span>Saved favourites</span><strong id="favCountSettings">0</strong></div><p>Favourites and recent apps are saved only in this browser/device.</p><div class="modal-actions"><button class="btn" id="clearFavorites">Clear favourites</button><button class="btn" id="clearRecent">Clear recent</button><button class="btn btn-red" id="closeSettings">Done</button></div></div></div>
-<script>
+<meta name="theme-color" content="#080808">
+<meta name="description" content="HAARIS MODS - Premium apps, tools and updates.">
+<title>HAARIS MOD‌S | Premium Apps</title><style>
+:root {
+  --bg: #080808;
+  --panel: #121212;
+  --panel2: #1a1a1a;
+  --text: #f7f7f7;
+  --muted: #a6a6a6;
+  --red: #ff2638;
+  --border: #292929;
+  --shadow: rgba(255, 25, 45, .16);
+}
+body.light {
+  --bg: #f5f5f7;
+  --panel: #ffffff;
+  --panel2: #eeeeF2;
+  --text: #171717;
+  --muted: #666666;
+  --red: #df1027;
+  --border: #dddddf;
+  --shadow: rgba(220, 0, 30, .10);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background .25s, color .25s;
+}
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+.container { width: min(1100px, 92%); margin: auto; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.site-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.logo span { color: var(--red); }
+.nav-actions { display: flex; gap: 8px; align-items: center; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 11px 15px;
+  color: var(--text);
+  background: var(--panel2);
+  font-weight: 700;
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px var(--shadow);
+}
+.btn-red {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+}
+.icon-btn { padding: 10px 12px; }
+
+.hero {
+  padding: 65px 0 38px;
+  text-align: center;
+  background: radial-gradient(ellipse at top, var(--shadow), transparent 65%);
+}
+.pill {
+  display: inline-block;
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 30px;
+  padding: 7px 13px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.hero h1 {
+  font-size: clamp(36px, 8vw, 66px);
+  margin: 20px 0 12px;
+  line-height: 1.08;
+}
+.hero h1 span {
+  color: var(--red);
+  text-shadow: 0 0 25px var(--shadow);
+}
+.hero p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 24px;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-area { padding: 18px 0 28px; }
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 5px 15px;
+}
+.search-box input {
+  width: 100%;
+  padding: 13px 0;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  background: transparent;
+}
+.search-box:focus-within {
+  border-color: var(--red);
+  box-shadow: 0 0 15px var(--shadow);
+}
+.section { padding: 24px 0 38px; }
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.section-heading h2 { margin: 0; font-size: 25px; }
+.section-heading h2 span { color: var(--red); }
+.section-heading p { color: var(--muted); font-size: 13px; }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+.filter {
+  padding: 9px 14px;
+  border-radius: 25px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.filter.active, .filter:hover {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.app-card {
+  min-width: 0;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 19px;
+  overflow: hidden;
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+  animation: appear .35s ease both;
+}
+.app-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--red);
+  box-shadow: 0 8px 30px var(--shadow);
+}
+.app-image {
+  height: 175px;
+  background: var(--panel2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  overflow: hidden;
+}
+.app-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+.app-info { padding: 17px; }
+.app-info h3 { margin: 0 0 9px; font-size: 17px; }
+.app-info p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 39px;
+}
+.app-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--red);
+  background: var(--shadow);
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.download-btn { width: 100%; }
+
+.empty {
+  display: none;
+  text-align: center;
+  padding: 35px 10px;
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  border-radius: 15px;
+}
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+}
+.social-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 19px 12px;
+  text-align: center;
+  transition: border-color .2s, transform .2s;
+}
+.social-card:hover {
+  border-color: var(--red);
+  transform: translateY(-3px);
+}
+.social-card strong { display: block; margin-bottom: 7px; }
+.social-card small { color: var(--muted); }
+
+.community {
+  padding: 27px;
+  border-radius: 20px;
+  background: linear-gradient(120deg, var(--panel2), var(--panel));
+  border: 1px solid var(--border);
+  text-align: center;
+}
+.community h2 { margin-top: 0; }
+.community p { color: var(--muted); line-height: 1.6; }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 25px 0;
+  margin-top: 25px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 760px) {
+  .app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .app-image { height: 135px; }
+  .app-info { padding: 12px; }
+  .app-info h3 { font-size: 15px; }
+  .hero { padding-top: 48px; }
+  .section-heading h2 { font-size: 22px; }
+}
+@media (max-width: 420px) {
+  .logo { font-size: 16px; }
+  .nav { min-height: 62px; }
+  .nav-actions .btn { padding: 9px; font-size: 12px; }
+  .app-grid { gap: 9px; }
+  .app-image { height: 110px; }
+  .app-info p { font-size: 12px; }
+  .social-grid { gap: 8px; }
+  .social-card { padding: 15px 5px; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style></head><body>
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">
+      <img src="logo.png" alt="HAARIS MODS Logo" class="site-logo">
+      HAARIS <span>MODS 😎</span>
+    </a>
+    <div class="nav-actions">
+      <button class="btn icon-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+      <a class="btn btn-red" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">✈ Join</a>
+    </div>
+  </div>
+</header><main>
+  <section class="hero">
+    <div class="container">
+      <span class="pill">⚡ PREMIUM APP HUB</span>
+      <h1>WELCOME TO<br><span>HAARIS MODS</span></h1>
+      <p>Discover apps, explore tools and find your next favourite download. Simple, stylish and mobile-friendly.</p>
+      <div class="hero-actions">
+        <a href="#apps" class="btn btn-red">🚀 Explore Apps</a>
+        <a href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer" class="btn">✈ Telegram Community</a>
+      </div>
+    </div>
+  </section>  <section class="container search-area" aria-label="Search apps">
+    <label class="search-box">
+      <span>🔍</span>
+      <input id="searchInput" type="search" placeholder="Search apps... e.g. CapCut" autocomplete="off">
+    </label>
+  </section>  <section class="container section" id="apps">
+    <div class="section-heading">
+      <div>
+        <h2>🆕 Latest <span>Apps</span></h2>
+        <p>Recently added apps</p>
+      </div>
+      <span class="tag" id="appCount">8 APPS</span>
+    </div>
+    <div class="app-grid" id="latestGrid"></div>
+    <div class="empty" id="latestEmpty">No latest apps found.</div>
+  </section>  <section class="container section" id="all-apps">
+    <div class="section-heading">
+      <div>
+        <h2>Explore <span>Apps</span></h2>
+        <p>Choose a category and find your app</p>
+      </div>
+    </div>
+    <div class="filters" id="filters">
+      <button class="filter active" data-category="All">All Apps</button>
+      <button class="filter" data-category="Video Editors">🎬 Video Editors</button>
+      <button class="filter" data-category="Music">🎵 Music</button>
+      <button class="filter" data-category="Tools">🧰 Tools</button>
+    </div>
+    <div class="app-grid" id="appGrid"></div>
+    <div class="empty" id="allEmpty">No apps match your search.</div>
+  </section>  <section class="container section">
+    <div class="section-heading">
+      <h2>Follow <span>Us</span> ❤️</h2>
+    </div>
+    <div class="social-grid">
+      <a class="social-card" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">
+        <strong>✈ Telegram</strong>
+        <small>Join our community</small>
+      </a>
+      <a class="social-card" href="https://www.instagram.com/haaris_mods?xtok=MXZrbTc3ZDVpZDk2cA==" target="_blank" rel="noopener noreferrer">
+        <strong>📸 Instagram</strong>
+        <small>@haaris_mods</small>
+      </a>
+      <a class="social-card" href="https://youtube.com/@unidentify_2.0?si=Ff3ctZKYT68OmbXA" target="_blank" rel="noopener noreferrer">
+        <strong>▶ YouTube</strong>
+        <small>Subscribe to channel</small>
+      </a>
+      <a class="social-card" href="https://t.me/+i3LUiDabXd5kZjZl" target="_blank" rel="noopener noreferrer">
+        <strong>📩 Apps Requests</strong>
+        <small>Request your favourite apps</small>
+      </a>
+    </div>
+  </section>  <section class="container section">
+    <div class="community">
+      <h2>🔥 Join HAARIS APPS</h2>
+      <p>Join the Telegram community for app updates and new posts.</p>
+      <a class="btn btn-red" href="https://t.me/haarisapps" target="_blank" rel="noopener noreferrer">Join Telegram ↗</a>
+    </div>
+  </section>
+</main><footer>
+  <div class="container">
+    <strong>HAARIS MODS 😎</strong><br>
+    Made with ❤️ for the community.<br>
+    Only download apps you trust and have permission to use.<br>
+    © <span id="year"></span> HAARIS MODS
+  </div>
+</footer><script>
 "use strict";
 
-/* ==========================================================
-   ADD NEW APPS HERE:
-   1. Copy one app object and paste it before the closing ];
-   2. Change id, name, image, description, category, url, added.
-   3. Keep id unique. Image file must be uploaded to repo root.
-   category must be: "Video Editors", "Music", or "Tools".
-   added: use a bigger number for newer apps (e.g. 9, 10, 11).
-   badge: "NEW", "UPDATE", or "".
-   ========================================================== */
 const STARTER_APPS = [
+   {
+    id: "picsart-pro",
+    name: "PICSART PRO",
+    image: "PP.JPG",
+    description: "Premium Unlocked Edit Like A Pro.",
+    category: "Video Editors",
+    url: "https://www.mediafire.com/file/jkm6oqavpw30yhp/Picsart_30.9.5-@RapidModder.apk/file",
+    added: 9
+  },
   {
     id: "alight-motion-pro",
     name: "ALIGHT MOTION PRO",
@@ -69,8 +422,7 @@ const STARTER_APPS = [
     description: "Premium Unlocked Edit Like A Pro.",
     category: "Video Editors",
     url: "https://www.mediafire.com/file/dp5vlguu1b46nvo/ALIGHT_MOTION_PRO.apk/file",
-    added: 8,
-    badge: "UPDATE"
+    added: 8
   },
   {
     id: "sr-patch-pro",
@@ -79,8 +431,7 @@ const STARTER_APPS = [
     description: "Using For Bypassing Apks.",
     category: "Tools",
     url: "https://www.mediafire.com/file/gvztg8b0uh7cpob/SR+PATCH+PRO.apk/file",
-    added: 7,
-    badge: ""
+    added: 7
   },
   {
     id: "mt-manager-pro",
@@ -89,8 +440,7 @@ const STARTER_APPS = [
     description: "Apk Modding Apk Customise.",
     category: "Tools",
     url: "https://www.mediafire.com/file/dni17n2hslvs7rh/MT+MANAGER+PRO.apk/file",
-    added: 6,
-    badge: ""
+    added: 6
   },
   {
     id: "movie-box-premium",
@@ -99,8 +449,7 @@ const STARTER_APPS = [
     description: "All Movies No Ads Free Fast Download.",
     category: "Tools",
     url: "https://www.mediafire.com/file/ofx18hd5ucazooh/MOVIE+BOX+PREMIUM.apk/file",
-    added: 5,
-    badge: ""
+    added: 5
   },
   {
     id: "ff-lib-file",
@@ -109,8 +458,7 @@ const STARTER_APPS = [
     description: "Using For Bypassing.",
     category: "Tools",
     url: "https://www.mediafire.coim/file/9t4guy7brsenlcc/Add+lib+Permission+in+FF+apk+by+haarismods.cpp/file",
-    added: 4,
-    badge: ""
+    added: 4
   },
   {
     id: "capcut",
@@ -119,8 +467,7 @@ const STARTER_APPS = [
     description: "Video editing app listing.",
     category: "Video Editors",
     url: "https://www.mediafire.com/file/ed5bdl1ky7cvsw0/CapCut_23.0.0-@RapidModder.apk/file",
-    added: 3,
-    badge: "NEW"
+    added: 3
   },
   {
     id: "purity",
@@ -129,8 +476,7 @@ const STARTER_APPS = [
     description: "Music app listing.",
     category: "Music",
     url: "https://www.mediafire.com/file/peyvk6hgzl28d5d/Spotui_v1.5.0.apk/file",
-    added: 2,
-    badge: "NEW"
+    added: 2
   },
   {
     id: "mx-player-pro",
@@ -139,81 +485,168 @@ const STARTER_APPS = [
     description: "Media player app listing.",
     category: "Tools",
     url: "https://www.mediafire.com/file/zv02ccm9jm1k2hi/MX_PLAYER+PRO.apk/file",
-    added: 1,
-    badge: ""
+    added: 1
   }
-
-  /*
-  SAMPLE NEW APP — remove the /* and */ markers to enable it,
-  then change all sample details:
-  ,
-  {
-    id: "new-app-id",
-    name: "NEW APP NAME",
-    image: "NEWAPP.JPG",
-    description: "Write your app description here.",
-    category: "Tools",
-    url: "https://example.com/download",
-    added: 9,
-    badge: "NEW"
-  }
-  */
 ];
 
 const STORAGE_KEY = "haaris-mods-apps-v1";
 const THEME_KEY = "haaris-mods-theme-v1";
-const FAV_KEY = "haaris-diwali-favs-v1";
-const RECENT_KEY = "haaris-diwali-recent-v1";
-const POPUP_KEY = "haaris-diwali-popup-v1";
-const EFFECT_KEY = "haaris-diwali-effects-v1";
-const $ = id => document.getElementById(id);
+
+const grid = document.getElementById("appGrid");
+const latestGrid = document.getElementById("latestGrid");
+const searchInput = document.getElementById("searchInput");
+const latestEmpty = document.getElementById("latestEmpty");
+const allEmpty = document.getElementById("allEmpty");
+
 let selectedCategory = "All";
 let apps = loadApps();
-let favorites = readArray(FAV_KEY);
-let recent = readArray(RECENT_KEY);
-let deferredInstall = null;
 
-function readArray(key) {
-  try { const value = JSON.parse(localStorage.getItem(key) || "[]"); return Array.isArray(value) ? value : []; }
-  catch (e) { return []; }
-}
 function loadApps() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      const saved = JSON.parse(raw);
-      if (Array.isArray(saved)) {
-        const savedById = new Map(saved.filter(app => app && app.id).map(app => [app.id, app]));
-        const defaults = STARTER_APPS.map(app => ({ ...app, ...(savedById.get(app.id) || {}) }));
-        const defaultIds = new Set(STARTER_APPS.map(app => app.id));
-        const extras = saved.filter(app => app && app.id && !defaultIds.has(app.id));
-        return [...defaults, ...extras];
-      }
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed)) return parsed;
     }
-  } catch (e) { console.warn("Using default app list."); }
+  } catch (e) {
+    console.warn("Could not load local app data.");
+  }
   return STARTER_APPS.map(app => ({ ...app }));
 }
+
 function safeImagePath(filename) {
-  return filename && /^[a-zA-Z0-9._-]+$/.test(filename) ? filename : "";
+  if (!filename) return "";
+  if (!/^[a-zA-Z0-9._-]+$/.test(filename)) return "";
+  return filename;
 }
+
 function createCard(app) {
   const card = document.createElement("article");
   card.className = "app-card";
+
   const imageBox = document.createElement("div");
   imageBox.className = "app-image";
+
   const imagePath = safeImagePath(app.image);
+
   if (imagePath) {
     const img = document.createElement("img");
-    img.src = imagePath; img.alt = app.name + " app image"; img.loading = "lazy";
-    img.onerror = () => { img.style.display = "none"; };
+    img.src = imagePath;
+    img.alt = app.name + " app image";
+    img.loading = "lazy";
+    img.onerror = () => {
+      img.style.display = "none";
+    };
     imageBox.appendChild(img);
-  } else imageBox.textContent = "📱";
+  } else {
+    imageBox.textContent = "📱";
+  }
+
   const info = document.createElement("div");
   info.className = "app-info";
-  const meta = document.createElement("div"); meta.className = "app-meta";
-  const tag = document.createElement("span"); tag.className = "tag"; tag.textContent = app.category; meta.appendChild(tag);
-  if (app.badge) { const badge = document.createElement("span"); badge.className = "badge"; badge.textContent = app.badge; meta.appendChild(badge); }
-  const title = document.createElement("h3"); title.textContent = app.name;
-  const desc = document.createElement("p"); desc.textContent = app.description;
-  const actions = document.createElement("div"); actions.className = "card-actions";
-  const link = document.createElement("a"); link.className = "btn btn-red"; link.href = app.url; link.target = "_blank"; link.re
+
+  const meta = document.createElement("div");
+  meta.className = "app-meta";
+
+  const tag = document.createElement("span");
+  tag.className = "tag";
+  tag.textContent = app.category;
+  meta.appendChild(tag);
+
+  const title = document.createElement("h3");
+  title.textContent = app.name;
+
+  const desc = document.createElement("p");
+  desc.textContent = app.description;
+
+  const link = document.createElement("a");
+  link.className = "btn btn-red download-btn";
+  link.href = app.url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = "Get App ↗";
+
+  info.append(meta, title, desc, link);
+  card.append(imageBox, info);
+
+  return card;
+}
+
+function matchesSearch(app) {
+  const term = searchInput.value.trim().toLowerCase();
+  const text = [app.name, app.description, app.category]
+    .join(" ")
+    .toLowerCase();
+
+  return text.includes(term);
+}
+
+function render() {
+  const filtered = apps.filter(app =>
+    matchesSearch(app) &&
+    (selectedCategory === "All" || app.category === selectedCategory)
+  );
+
+  grid.replaceChildren();
+  filtered.forEach(app => grid.appendChild(createCard(app)));
+
+  allEmpty.style.display = filtered.length ? "none" : "block";
+
+  const latest = apps
+    .filter(matchesSearch)
+    .slice()
+    .sort((a, b) => (a.added || 0) - (b.added || 0))
+    .slice(0, 3);
+
+  latestGrid.replaceChildren();
+  latest.forEach(app => latestGrid.appendChild(createCard(app)));
+
+  latestEmpty.style.display = latest.length ? "none" : "block";
+
+  document.getElementById("appCount").textContent =
+    apps.length + (apps.length === 1 ? " APP" : " APPS");
+}
+
+searchInput.addEventListener("input", render);
+
+document.getElementById("filters").addEventListener("click", event => {
+  const button = event.target.closest("[data-category]");
+  if (!button) return;
+
+  selectedCategory = button.dataset.category;
+
+  document.querySelectorAll(".filter").forEach(item =>
+    item.classList.toggle("active", item === button)
+  );
+
+  render();
+});
+
+function setTheme(theme) {
+  document.body.classList.toggle("light", theme === "light");
+
+  document.getElementById("themeBtn").textContent =
+    theme === "light" ? "🌙" : "☀️";
+
+  try {
+    localStorage.setItem(THEME_KEY, theme);
+  } catch (e) {}
+}
+
+let savedTheme = "dark";
+
+try {
+  savedTheme = localStorage.getItem(THEME_KEY) || "dark";
+} catch (e) {}
+
+setTheme(savedTheme);
+
+document.getElementById("themeBtn").addEventListener("click", () => {
+  setTheme(document.body.classList.contains("light") ? "dark" : "light");
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+render();
+</script></body>
+</html>
